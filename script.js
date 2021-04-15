@@ -49,15 +49,15 @@ function colocarMensagem() {
 	for (let i = 0; i < mensagens.length; i++) {
 		if (mensagens[i].type == 'status') {
 			caixaDeMensagens.innerHTML += `
-		<div class="mensagem status"><strong>${mensagens[i].from}</strong> ${mensagens[i].text}</div>`
+		<div class="mensagem status"><span>(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> ${mensagens[i].text}</div>`
 		}
 		else if (mensagens[i].type == 'message') {
 			caixaDeMensagens.innerHTML += `
-		 <div class="mensagem normal"><strong>${mensagens[i].from}</strong> para <strong>${mensagens[i].to}</strong> : ${mensagens[i].text}</div>`
+		 <div class="mensagem normal"><span>(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> para <strong>${mensagens[i].to}</strong> : ${mensagens[i].text}</div>`
 		}
 		else if (mensagens[i].type == 'private_message') {
 			caixaDeMensagens.innerHTML += `
-		<div class="mensagem reservada"><strong>${mensagens[i].from}</strong> reservadamente para <strong>${mensagens[i].to}</strong>: ${mensagens[i].text}</div>`
+		<div class="mensagem reservada"><span>(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> reservadamente para <strong>${mensagens[i].to}</strong>: ${mensagens[i].text}</div>`
 		}
 	} window.scrollTo(0, document.body.scrollHeight);
 }
