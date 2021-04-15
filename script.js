@@ -55,7 +55,7 @@ function colocarMensagem() {
 			caixaDeMensagens.innerHTML += `
 		 <div class="mensagem normal"><span>(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> para <strong>${mensagens[i].to}</strong> : ${mensagens[i].text}</div>`
 		}
-		else if (mensagens[i].type == 'private_message') {
+		else if (mensagens[i].type == 'private_message' && mensagens[i].to===pergunta) {
 			caixaDeMensagens.innerHTML += `
 		<div class="mensagem reservada"><span>(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> reservadamente para <strong>${mensagens[i].to}</strong>: ${mensagens[i].text}</div>`
 		}
@@ -85,10 +85,5 @@ function enviarMensagem(){
 	}
 	function tratarFalha(){	
 		window.location.reload()		
-	}
-
-
-
-
-	
+	}	
 }
