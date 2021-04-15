@@ -1,6 +1,11 @@
 
+chamarAxios()
+setInterval(chamarAxios,3000)
+function chamarAxios(){
 const promessa = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages')
 promessa.then(popularMensagens);
+}
+
 
 function popularMensagens(resposta) {
 	console.log(resposta.data);
@@ -27,4 +32,4 @@ function colocarMensagem() {
 		}
 	}
 }
-private_message
+
