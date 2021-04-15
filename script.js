@@ -62,3 +62,19 @@ function colocarMensagem() {
 	} window.scrollTo(0, document.body.scrollHeight);
 }
 
+function enviarMensagem(){
+	const texto=document.querySelector(".campo-de-mensagem");
+	console.log(texto);
+	console.log(pergunta);
+	const msg={
+		from: pergunta,
+		to: "Todos",
+		text: texto.value,
+		type: "message" 
+	};
+	console.log(msg)
+	const enviando = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages',msg );
+	texto.value="";
+	chamarAxios()
+	
+}
