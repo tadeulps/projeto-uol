@@ -75,6 +75,20 @@ function enviarMensagem(){
 	console.log(msg)
 	const enviando = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages',msg );
 	texto.value="";
-	chamarAxios()
+
+
+	enviando.then(tratarEnvio);
+	enviando.catch(tratarFalha);
+	
+	function tratarEnvio(){
+		chamarAxios()
+	}
+	function tratarFalha(){	
+		window.location.reload()		
+	}
+
+
+
+
 	
 }
