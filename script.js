@@ -16,7 +16,7 @@ function popularMensagens(resposta) {
 
 function colocarMensagem() {
 	const caixaDeMensagens = document.querySelector(".caixa-de-mensagens");
-	caixaDeMensagens.innerHTML += "";
+	caixaDeMensagens.innerHTML = "";
 	for (let i = 0; i < mensagens.length; i++) {
 		if (mensagens[i].type == 'status') {
 			caixaDeMensagens.innerHTML += `
