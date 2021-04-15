@@ -1,7 +1,10 @@
+let pergunta="";
 perguntarNome()
+
 //colocar o nome e entrar na sala
 function perguntarNome() {
-	const nome = { name: prompt("Qual seu nome?") };
+	pergunta=prompt("Qual seu nome?");
+	const nome = { name: pergunta };
 	console.log(nome)
 	const requisicao = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants', nome);
 
@@ -18,6 +21,13 @@ function perguntarNome() {
 	}
 }
 
+setInterval(manterConexao, 5000);
+function manterConexao(){
+	const nome = { name: pergunta };
+	const requisicao = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/status', nome);
+
+}
+
 chamarAxios();
 setInterval(chamarAxios, 3000);
 
@@ -27,10 +37,10 @@ function chamarAxios() {
 }
 //funçao que é chamada após receber a resposta do servidor
 function popularMensagens(resposta) {
-	console.log(resposta.data);
+	
 	mensagens = resposta.data;
 	colocarMensagem()
-	console.log(mensagens.length)
+	
 }
 //função que vai colocar as mensagens no HTML
 function colocarMensagem() {
