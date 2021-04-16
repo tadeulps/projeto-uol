@@ -105,10 +105,11 @@ function colocarUsuario(resposta) {
 	usuarios =resposta.data
 	console.log(usuarios)
 	const caixaDeUsuarios = document.querySelector(".caixa-usuarios");
-	caixaDeUsuarios.innerHTML = `<div class="opcoes">
+	caixaDeUsuarios.innerHTML = `
+	<div class="opcoes" onclick="marcar(this)">
 	<ion-icon name="people"></ion-icon>
 	<p>Todos</p>
-	<ion-icon name="checkmark" class="check"></ion-icon>
+	<ion-icon name="checkmark" class="check escondido aparecido"></ion-icon>
 	</div>`;
 	for (let i = 0; i < usuarios.length; i++){
 		caixaDeUsuarios.innerHTML+=`
@@ -136,7 +137,18 @@ function voltar(){
 }
 
 function marcar(elemento){
-	console.log(elemento.children[2]);
+	desmarcarOutras()
+	
 	const teste=elemento.children[2]
-	teste.classList.remove("escondido")
+	console.log(teste)
+	teste.classList.add("aparecido")
+}
+
+function desmarcarOutras(){
+	const user = document.querySelector(".tela-participantes .opcoes .aparecido");
+	console.log(user)
+  if(user!==null){    
+    console.log('aaa')
+		user.classList.remove('aparecido')
+  }
 }

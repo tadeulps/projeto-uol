@@ -90,6 +90,9 @@ body{
 .escondido{
   display: none;
 }
+.aparecido{
+  display: block;
+}
 .tela-participantes{
   width: 70%;
   height: 100%;
@@ -98,6 +101,7 @@ body{
   right: 0;
   top: 0;
   z-index: 10;
+  overflow: scroll;
 }
 
 .titulo{
