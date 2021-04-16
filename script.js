@@ -112,10 +112,10 @@ function colocarUsuario(resposta) {
 	</div>`;
 	for (let i = 0; i < usuarios.length; i++){
 		caixaDeUsuarios.innerHTML+=`
-		<div class="opcoes" onclick="marcar(this)">
+		<div class="opcoes" onclick="marcar(this)" >
 		<ion-icon name="person-circle"></ion-icon>
 		<p>${usuarios[i].name}</p>
-		
+		<ion-icon name="checkmark" class="check escondido"></ion-icon>
 	</div>  `
 	}
 }
@@ -136,5 +136,7 @@ function voltar(){
 }
 
 function marcar(elemento){
-	
+	console.log(elemento.children[2]);
+	const teste=elemento.children[2]
+	teste.classList.remove("escondido")
 }
