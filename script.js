@@ -1,7 +1,7 @@
 let pergunta="";
 perguntarNome()
 
-//colocar o nome e entrar na sala
+
 function perguntarNome() {
 	pergunta=prompt("Qual seu nome?");
 	const nome = { name: pergunta };
@@ -35,14 +35,14 @@ function chamarAxios() {
 	const promessa = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages')
 	promessa.then(popularMensagens);
 }
-//funçao que é chamada após receber a resposta do servidor
+
 function popularMensagens(resposta) {
 	
 	mensagens = resposta.data;
 	colocarMensagem()
 	
 }
-//função que vai colocar as mensagens no HTML
+
 function colocarMensagem() {
 	const caixaDeMensagens = document.querySelector(".caixa-de-mensagens");
 	caixaDeMensagens.innerHTML = "";
@@ -137,18 +137,17 @@ function voltar(){
 }
 
 function marcar(elemento){
-	desmarcarOutras()
 	
+	console.log(elemento.parentNode)
+	const user = elemento.parentNode.querySelector(".opcoes .aparecido");
+	
+  if(user!==null){    
+    console.log('aaa')
+		user.classList.remove('aparecido')
+  }
+
 	const teste=elemento.children[2]
 	console.log(teste)
 	teste.classList.add("aparecido")
 }
 
-function desmarcarOutras(){
-	const user = document.querySelector(".tela-participantes .opcoes .aparecido");
-	console.log(user)
-  if(user!==null){    
-    console.log('aaa')
-		user.classList.remove('aparecido')
-  }
-}

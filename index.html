@@ -35,13 +35,15 @@
     </div>
     <div class="titulo"> Escolha a visibilidade:</div>
     <div class="caixa-visibilidade">
-      <div class="opcoes">
+      <div class="opcoes" onclick="marcar(this)">
         <ion-icon name="lock-open"></ion-icon>
         <p>Público</p>
+        <ion-icon name="checkmark" class="check escondido aparecido"></ion-icon>
       </div>
-      <div class="opcoes">
+      <div class="opcoes" onclick="marcar(this)">
         <ion-icon name="lock-closed"></ion-icon>
         <p>Reservadamente</p>
+        <ion-icon name="checkmark" class="check escondido "></ion-icon>
       </div>
     </div>
   </div>
