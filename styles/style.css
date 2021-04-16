@@ -86,3 +86,54 @@ body{
 .botao-inferior ion-icon{
   font-size: 26px;
 }
+
+.escondido{
+  display: none;
+}
+.tela-participantes{
+  width: 70%;
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.titulo{
+  text-align: center;
+  margin-top: 23px;
+  margin-bottom: 23px;
+  font-weight: bold;
+}
+.titulo:nth-child(3){
+  margin-top: 10px;
+}
+
+.opcoes{
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.opcoes ion-icon:first-child{
+  font-size: 22px;
+  padding-left:17px ;
+  padding-right: 4px;  
+}
+.check {
+  color: #28BB25;
+  font-size: 14px;
+  --ionicon-stroke-width: 100px;
+  position: absolute;
+  right: 10px;
+}
+.parte-sombreada{
+  width: 30%;
+  height: 100%;
+  background-color:#00000099;  
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}

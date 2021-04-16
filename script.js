@@ -94,3 +94,47 @@ inputText.addEventListener("keyup", function(event) {
 			document.querySelector(".botao").click();
 	 }
 });
+
+pegarUsuarios()
+setInterval(pegarUsuarios, 10000)
+function pegarUsuarios(){
+	const promise=axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants')
+	promise.then(colocarUsuario)
+}
+function colocarUsuario(resposta) {
+	usuarios =resposta.data
+	console.log(usuarios)
+	const caixaDeUsuarios = document.querySelector(".caixa-usuarios");
+	caixaDeUsuarios.innerHTML = `<div class="opcoes">
+	<ion-icon name="people"></ion-icon>
+	<p>Todos</p>
+	<ion-icon name="checkmark" class="check"></ion-icon>
+	</div>`;
+	for (let i = 0; i < usuarios.length; i++){
+		caixaDeUsuarios.innerHTML+=`
+		<div class="opcoes" onclick="marcar(this)">
+		<ion-icon name="person-circle"></ion-icon>
+		<p>${usuarios[i].name}</p>
+		
+	</div>  `
+	}
+}
+
+function mostrarParticipantes(){
+	const telaParticipantes=document.querySelector(".tela-participantes")
+	telaParticipantes.classList.remove("escondido")
+	const telaSombreada=document.querySelector(".parte-sombreada")
+	telaSombreada.classList.remove("escondido")
+
+}
+
+function voltar(){
+	const telaParticipantes=document.querySelector(".tela-participantes")
+	telaParticipantes.classList.add("escondido")
+	const telaSombreada=document.querySelector(".parte-sombreada")
+	telaSombreada.classList.add("escondido")
+}
+
+function marcar(elemento){
+	
+}
