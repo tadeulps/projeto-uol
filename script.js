@@ -11,7 +11,7 @@ function perguntarNome() {
 	requisicao.then(tratarSucesso);
 	requisicao.catch(tratarError);
 	function tratarSucesso() {
-		alert("Você entrou com sucesso")
+	
 	}
 	function tratarError(erro) {
 		if (erro.response.status == 400) {
