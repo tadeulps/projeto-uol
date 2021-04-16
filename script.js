@@ -5,7 +5,7 @@ perguntarNome()
 function perguntarNome() {
 	pergunta=prompt("Qual seu nome?");
 	const nome = { name: pergunta };
-	console.log(nome)
+
 	const requisicao = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/participants', nome);
 
 	requisicao.then(tratarSucesso);
@@ -64,15 +64,14 @@ function colocarMensagem() {
 
 function enviarMensagem(){
 	const texto=document.querySelector(".campo-de-mensagem");
-	console.log(texto);
-	console.log(pergunta);
+
 	const msg={
 		from: pergunta,
 		to: "Todos",
 		text: texto.value,
 		type: "message" 
 	};
-	console.log(msg)
+	
 	const enviando = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/uol/messages',msg );
 	texto.value="";
 
@@ -103,7 +102,7 @@ function pegarUsuarios(){
 }
 function colocarUsuario(resposta) {
 	usuarios =resposta.data
-	console.log(usuarios)
+	
 	const caixaDeUsuarios = document.querySelector(".caixa-usuarios");
 	caixaDeUsuarios.innerHTML = `
 	<div class="opcoes" onclick="marcar(this)">
@@ -138,16 +137,16 @@ function voltar(){
 
 function marcar(elemento){
 	
-	console.log(elemento.parentNode)
+
 	const user = elemento.parentNode.querySelector(".opcoes .aparecido");
 	
   if(user!==null){    
-    console.log('aaa')
+   
 		user.classList.remove('aparecido')
   }
 
 	const teste=elemento.children[2]
-	console.log(teste)
+
 	teste.classList.add("aparecido")
 }
 
