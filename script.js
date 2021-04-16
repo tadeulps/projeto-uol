@@ -87,3 +87,10 @@ function enviarMensagem(){
 		window.location.reload()		
 	}	
 }
+var inputText = document.querySelector(".campo-de-mensagem");
+inputText.addEventListener("keyup", function(event) {
+	 if (event.keyCode === 13) {
+			event.preventDefault();
+			document.querySelector(".botao").click();
+	 }
+});
